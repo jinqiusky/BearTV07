@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import androidx.preference.PreferenceManager;
 
 import com.fongmi.android.tv.App;
+import com.fongmi.android.tv.R;
 
 public class Prefers {
 
@@ -52,7 +53,7 @@ public class Prefers {
     }
 
     public static String getUrl() {
-        return getString("url");
+        return getString("url", ResUtil.getString(R.string.url));
     }
 
     public static void putUrl(String url) {
@@ -89,14 +90,6 @@ public class Prefers {
 
     public static void putSize(int size) {
         put("size", size);
-    }
-
-    public static boolean isFFmpeg() {
-        return getBoolean("ffmpeg");
-    }
-
-    public static void putFFmpeg(boolean ffmpeg) {
-        put("ffmpeg", ffmpeg);
     }
 
     public static String getParse() {
